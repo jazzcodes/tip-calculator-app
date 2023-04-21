@@ -14,28 +14,29 @@
 <body>
 
   <img src="images/logo.svg" alt="" class="logo">
-
+  <form>
   <div class="container">
+
     <div class="upper">
     <div class="info">
     <div class="bill text-input">
       <img src="images/icon-dollar.svg" alt="" class="dollar"> 
       <label for="bill-input">Bill</label>
-      <input type="text" id="bill-input">
+      <input type="text" id="bill-input" placeholder="0">
     </div>
     <div class="tips">
       <p class="tips__title">Select Tip %</p>
-      <button class="tip">5%</button>
-      <button class="tip">10%</button>
-      <button class="tip">15%</button>
-      <button class="tip">25%</button>
-      <button class="tip">50%</button>
-      <input type="text" name="" id="custom-input" placeholder="Custom">
+      <button class="tip" id="p5">5%</button>
+      <button class="tip" id="p10">10%</button>
+      <button class="tip" id="p15">15%</button>
+      <button class="tip" id="p25">25%</button>
+      <button class="tip" id="p50">50%</button>
+      <input type="text" name="custom" id="custom-input" placeholder="Custom">
     </div>
     <div class="people text-input">
       <img src="images/icon-person.svg" alt="" class="person">
       <label for="people-input">Number of People</label>
-      <input type="text" id="people-input">
+      <input type="text" id="people-input" placeholder="0">
     </div>
     </div>
   </div>
@@ -57,9 +58,12 @@
       <p class="total-amount__result">$0.00</p>
     </div>
     </div>
-    <button type="reset"> reset </button>
+    <button type="reset" class="reset"> reset </button>
     </div>
+
   </div>
+</form>
+
 
 <!-- 
   Bill

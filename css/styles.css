@@ -58,6 +58,12 @@ body{
   
 }
 
+#bill-input::placeholder, #people-input::placeholder{
+    color:var(--label-text);
+
+}
+
+
 label, .tips__title{
     font-size: 1.8rem;
     color: var(--label-text);
@@ -204,7 +210,7 @@ button{
 }
 
 
-button[type="reset"]
+.reset
 {
     text-transform: uppercase;
     background-color: var(--accent);
@@ -280,7 +286,7 @@ button:hover
         font-size: 1.5rem;
     }
 
-    button[type="reset"]
+    .reset
     {
         font-size: 1.5rem;
 
@@ -293,7 +299,7 @@ button:hover
     }
 
     .dollar,.person{
-        width:4%;
+        width:3%;
         top:4.5rem;
     }
 
@@ -322,6 +328,10 @@ button:hover
         margin-top: 0rem;
         
     
+    }
+
+    #bill-input, #people-input{
+        font-size: 1.8rem;
     }
 
 }
