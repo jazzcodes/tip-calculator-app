@@ -30,8 +30,11 @@ p5.addEventListener("click",function(e)
   
 else{
     const tipAmount = 0.05*bill.value;
-    tipResult.innerText=`$${tipAmount}.00`;
-    totalResult.innerText=`$${people.value*tipAmount}.00`;
+    tipRoundedOff=Math.round((tipAmount*100/people.value))/100;
+    tipResult.innerText=`$${tipRoundedOff}`;
+    resultRoundedOff=Math.round(people.value*tipRoundedOff*100)/100;
+    totalBill=Math.round(bill.value/people.value*100)/100;
+    totalResult.innerText=`$${tipRoundedOff+totalBill}`;
     custom.value="";
     e.preventDefault();
   }
@@ -46,8 +49,11 @@ p10.addEventListener("click",function(e)
   }
   else{
     const tipAmount = 0.1*bill.value;
-    tipResult.innerText=`$${tipAmount}.00`;
-    totalResult.innerText=`$${people.value*tipAmount}.00`;
+    tipRoundedOff=Math.round((tipAmount*100/people.value))/100;
+    tipResult.innerText=`$${tipRoundedOff}`;
+    resultRoundedOff=Math.round(people.value*tipRoundedOff*100)/100;
+    totalBill=Math.round(bill.value/people.value*100)/100;
+    totalResult.innerText=`$${tipRoundedOff+totalBill}`;
     custom.value="";
     e.preventDefault();
   }
@@ -62,8 +68,11 @@ p15.addEventListener("click",function(e)
   }
   else{
     const tipAmount = 0.15*bill.value;
-    tipResult.innerText=`$${tipAmount}.00`;
-    totalResult.innerText=`$${people.value*tipAmount}.00`;
+    tipRoundedOff=Math.round((tipAmount*100/people.value))/100;
+    tipResult.innerText=`$${tipRoundedOff}`;
+    resultRoundedOff=Math.round(people.value*tipRoundedOff*100)/100;
+    totalBill=Math.round(bill.value/people.value*100)/100;
+    totalResult.innerText=`$${tipRoundedOff+totalBill}`;
     custom.value="";
     e.preventDefault();
   }
@@ -79,8 +88,11 @@ p25.addEventListener("click",function(e)
   else{
   
     const tipAmount = 0.25*bill.value;
-    tipResult.innerText=`$${tipAmount}.00`;
-    totalResult.innerText=`$${people.value*tipAmount}.00`;
+    tipRoundedOff=Math.round((tipAmount*100/people.value))/100;
+    tipResult.innerText=`$${tipRoundedOff}`;
+    resultRoundedOff=Math.round(people.value*tipRoundedOff*100)/100;
+    totalBill=Math.round(bill.value/people.value*100)/100;
+    totalResult.innerText=`$${tipRoundedOff+totalBill}`;
     custom.value="";
     e.preventDefault();
   }
@@ -96,8 +108,11 @@ p50.addEventListener("click",function(e)
   else{
     
     const tipAmount = 0.5*bill.value;
-    tipResult.innerText=`$${tipAmount}.00`;
-    totalResult.innerText=`$${people.value*tipAmount}.00`;
+    tipRoundedOff=Math.round((tipAmount*100/people.value))/100;
+    tipResult.innerText=`$${tipRoundedOff}`;
+    resultRoundedOff=Math.round(people.value*tipRoundedOff*100)/100;
+    totalBill=Math.round(bill.value/people.value*100)/100;
+    totalResult.innerText=`$${tipRoundedOff+totalBill}`;
     custom.value="";
     e.preventDefault();
   }
@@ -114,8 +129,11 @@ custom.addEventListener("input", function(e)
 
   else{
     const tipAmount = (e.target.value*bill.value)/100;
-    tipResult.innerText=`$${tipAmount}.00`;
-    totalResult.innerText=`$${people.value*tipAmount}.00`;
+    tipRoundedOff=Math.round((tipAmount*100/people.value))/100;
+    tipResult.innerText=`$${tipRoundedOff}`;
+    resultRoundedOff=Math.round(people.value*tipRoundedOff*100)/100;
+    totalBill=Math.round(bill.value/people.value*100)/100;
+    totalResult.innerText=`$${tipRoundedOff+totalBill}`;
   }
 });
 
