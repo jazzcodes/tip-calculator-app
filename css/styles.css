@@ -58,6 +58,10 @@ body{
   
 }
 
+input{
+    caret-color: var(--accent);
+}
+
 #bill-input::placeholder, #people-input::placeholder{
     color:var(--label-text);
 
@@ -227,6 +231,19 @@ button:hover
 #custom-input{
     width:46%;
 }
+
+
+.people__error{
+    color:rgb(224, 61, 61);
+}
+
+
+
+.people__label{
+    display: flex;
+    justify-content: space-between;
+}
+
 
 @media screen and (min-width:600px)
 {

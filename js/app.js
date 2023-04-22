@@ -9,51 +9,114 @@ const people=document.querySelector("#people-input");
 const resetBtn=document.querySelector(".reset");
 const tipResult=document.querySelector(".tip-amount__result");
 const totalResult=document.querySelector(".total-amount__result");
+const errorPeople=document.querySelector(".people__error");
 
 console.log(bill.value);
 console.log(people.value);
 console.log(tipResult.innerText);
 console.log(totalResult.innerText);
 
-p5.addEventListener("click",function()
-{   const tipAmount = 0.05*bill.value;
+
+
+p5.addEventListener("click",function(e)
+{   
+  if(people.value=="")
+  {
+    tipResult.innerText="$0.00";
+    totalResult.innerText="$0.00";
+    console.log("working");
+  
+  }
+  
+else{
+    const tipAmount = 0.05*bill.value;
     tipResult.innerText=`$${tipAmount}.00`;
     totalResult.innerText=`$${people.value*tipAmount}.00`;
+    custom.value="";
+    e.preventDefault();
+  }
+})
+
+p10.addEventListener("click",function(e)
+{   
+  if(people.value=="")
+  {
+    tipResult.innerText="$0.00";
+    totalResult.innerText="$0.00";
+  }
+  else{
+    const tipAmount = 0.1*bill.value;
+    tipResult.innerText=`$${tipAmount}.00`;
+    totalResult.innerText=`$${people.value*tipAmount}.00`;
+    custom.value="";
+    e.preventDefault();
+  }
+})
+
+p15.addEventListener("click",function(e)
+{   
+  if(people.value=="")
+  {
+    tipResult.innerText="$0.00";
+    totalResult.innerText="$0.00";
+  }
+  else{
+    const tipAmount = 0.15*bill.value;
+    tipResult.innerText=`$${tipAmount}.00`;
+    totalResult.innerText=`$${people.value*tipAmount}.00`;
+    custom.value="";
+    e.preventDefault();
+  }
+})
+
+p25.addEventListener("click",function(e)
+{   
+  if(people.value=="")
+  {
+    tipResult.innerText="$0.00";
+    totalResult.innerText="$0.00";
+  }
+  else{
+  
+    const tipAmount = 0.25*bill.value;
+    tipResult.innerText=`$${tipAmount}.00`;
+    totalResult.innerText=`$${people.value*tipAmount}.00`;
+    custom.value="";
+    e.preventDefault();
+  }
+})
+
+p50.addEventListener("click",function(e)
+{   
+  if(people.value=="")
+  {
+    tipResult.innerText="$0.00";
+    totalResult.innerText="$0.00";
+  }
+  else{
     
-})
-
-p10.addEventListener("click",function()
-{   const tipAmount = 0.1*bill.value;
+    const tipAmount = 0.5*bill.value;
     tipResult.innerText=`$${tipAmount}.00`;
     totalResult.innerText=`$${people.value*tipAmount}.00`;
-})
-
-p15.addEventListener("click",function()
-{   const tipAmount = 0.15*bill.value;
-    tipResult.innerText=`$${tipAmount}.00`;
-    totalResult.innerText=`$${people.value*tipAmount}.00`;
-})
-
-p25.addEventListener("click",function()
-{   const tipAmount = 0.25*bill.value;
-    tipResult.innerText=`$${tipAmount}.00`;
-    totalResult.innerText=`$${people.value*tipAmount}.00`;
-})
-
-p50.addEventListener("click",function()
-{   const tipAmount = 0.5*bill.value;
-    tipResult.innerText=`$${tipAmount}.00`;
-    totalResult.innerText=`$${people.value*tipAmount}.00`;
+    custom.value="";
+    e.preventDefault();
+  }
 })
 
 
 custom.addEventListener("input", function(e)
-{
+{   
+  if(people.value=="")
+  {
+    tipResult.innerText="$0.00";
+    totalResult.innerText="$0.00";
+  }
+
+  else{
     const tipAmount = (e.target.value*bill.value)/100;
     tipResult.innerText=`$${tipAmount}.00`;
     totalResult.innerText=`$${people.value*tipAmount}.00`;
-
-    
+  }
 });
 
 
@@ -62,18 +125,26 @@ custom.addEventListener("input", function(e)
 if(bill.value=='' && people.value=='')
 {
     resetBtn.style.opacity="0.3";
+
 }
+
+
 
 bill.addEventListener("input", function(e)
 {
   console.log(e.target.value);
   if(e.target.value!=="")
   {
+   
     resetBtn.style.opacity="1";
+
   }
   else{
+
     resetBtn.style.opacity="0.3";
   }
+
+ 
 
 });
 
@@ -83,25 +154,54 @@ people.addEventListener("input", function(e)
   if(e.target.value!=="")
   {
     resetBtn.style.opacity="1";
+    if(e.target.value==0)
+    {
+       errorPeople.innerText="Can't be zero";
+       people.style.borderColor="rgb(224, 61, 61)";
+    }
+
+  
   }
+
   else{
+    tipResult.innerText="$0.00";
+    totalResult.innerText="$0.00";
     resetBtn.style.opacity="0.3";
+    errorPeople.innerText="";
+    people.style.borderColor="var(--accent)";
   }
+
+
+
+
 
 
 });
 
-custom.addEventListener("input", function(e)
-{
-  console.log(e.target.value);
-  if(e.target.value!=="")
+
+// custom.addEventListener("input", function(e)
+// {
+//   console.log(e.target.value);
+//   if(e.target.value!=="")
+//   {
+//     resetBtn.style.opacity="1";
+//   }
+//   else{
+//     resetBtn.style.opacity="0.3";
+//   }
+
+// });
+
+
+  resetBtn.addEventListener("click",function()
   {
-    resetBtn.style.opacity="1";
-  }
-  else{
+    tipResult.innerText="$0.00";
+    totalResult.innerText="$0.00";
     resetBtn.style.opacity="0.3";
-  }
 
-});
+  });
 
 
+
+
+  console.log(resetBtn.disabled);
